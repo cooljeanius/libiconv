@@ -703,7 +703,7 @@ static int convert (iconv_t cd, int infile, const char* infilename)
         if (ilseq_byte_subst != NULL)
           subst_mb_to_mb_fallback(inbuf+4096-inbufrest, inbufrest);
         if (!silent)
-          conversion_error_EINVAL(infilename);
+          conversion_error_EINVAL(infilename); // 1
         status = 1;
         goto done;
       }
@@ -739,7 +739,7 @@ static int convert (iconv_t cd, int infile, const char* infilename)
           } else if (errno == EINVAL) {
             if (inbufsize == 0 || insize > 4096) {
               if (!silent)
-                conversion_error_EINVAL(infilename);
+                conversion_error_EINVAL(infilename); // 2
               status = 1;
               goto done;
             } else {
@@ -800,7 +800,7 @@ static int convert (iconv_t cd, int infile, const char* infilename)
         }
       } else if (errno == EINVAL) {
         if (!silent)
-          conversion_error_EINVAL(infilename);
+          conversion_error_EINVAL(infilename); // 3
         status = 1;
         goto done;
       } else if (errno == E2BIG) {
