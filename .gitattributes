@@ -1,1 +1,5 @@
 ChangeLog	merge=merge-changelog
+
+# Vendored scripts:
+build-aux/ltmain.sh linguist-vendored
+build-aux/mkinstalldirs linguist-vendored
