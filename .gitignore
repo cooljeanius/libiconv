@@ -30,6 +30,7 @@
 /srclib/allocator.h
 /srclib/areadlink.c
 /srclib/areadlink.h
+/srclib/assert.in.h
 /srclib/basename-lgpl.c
 /srclib/basename-lgpl.h
 /srclib/binary-io.c
@@ -60,6 +61,7 @@
 /srclib/getprogname.h
 /srclib/gettext.h
 /srclib/idx.h
+/srclib/intprops-internal.h
 /srclib/intprops.h
 /srclib/inttypes.in.h
 /srclib/libc-config.h
@@ -107,6 +109,7 @@
 /srclib/stat-w32.h
 /srclib/stdalign.in.h
 /srclib/stdbool.in.h
+/srclib/stdckdint.in.h
 /srclib/stddef.in.h
 /srclib/stdint.in.h
 /srclib/stdio-read.c
@@ -145,7 +148,9 @@
 /srcm4/absolute-header.m4
 /srcm4/alloca.m4
 /srcm4/asm-underscore.m4
+/srcm4/assert_h.m4
 /srcm4/builtin-expect.m4
+/srcm4/c-bool.m4
 /srcm4/canonicalize.m4
 /srcm4/close.m4
 /srcm4/codeset.m4
