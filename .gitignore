@@ -30,6 +30,7 @@
 /srclib/allocator.h
 /srclib/areadlink.c
 /srclib/areadlink.h
+/srclib/assert.h
 /srclib/assert.in.h
 /srclib/basename-lgpl.c
 /srclib/basename-lgpl.h

@@ -86,6 +86,9 @@ done
 for file in codeset.m4 fcntl-o.m4 lib-ld.m4 relocatable.m4 relocatable-lib.m4 visibility.m4; do
   cp -pv srcm4/$file libcharset/m4/$file || exit $?
 done
+for file in codeset.m4 fcntl-o.m4 lib-ld.m4 relocatable.m4 relocatable-lib.m4 visibility.m4; do
+  if test ! -e m4/$file; then cp -pv srcm4/$file m4/$file; fi
+done
 
 # ========== Generate files. ==========
 
