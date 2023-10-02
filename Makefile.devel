@@ -8,6 +8,7 @@ AUTOCONF = autoconf
 AUTOHEADER = autoheader
 AUTOMAKE = automake-1.16
 ACLOCAL = aclocal-1.16
+ACLOCAL_AMFLAGS = -I m4 -I srcm4 --install
 GPERF = gperf
 CC = gcc -Wall
 CFLAGS = -O
@@ -93,7 +94,7 @@ CONFIGURES = configure
 CONFIGURES_IN = configure.ac
 
 aclocal.m4 : $(CONFIGURES_IN) srclib/Makefile.gnulib $(wildcard m4/*.m4) $(wildcard srcm4/*.m4)
-	$(ACLOCAL) -I m4 -I srcm4 --output=$@ && touch $@ && rm -rf autom4te.cache
+	$(ACLOCAL) -I m4 -I srcm4 --install --output=$@ && touch $@ && rm -rf autom4te.cache
 
 configures : $(CONFIGURES)
 

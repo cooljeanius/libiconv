@@ -6,6 +6,7 @@ MAKE = make
 AUTOCONF = autoconf
 AUTOHEADER = autoheader
 ACLOCAL = aclocal-1.16
+ACLOCAL_AMFLAGS = -I m4 --install
 CP = cp
 RM = rm -f
 
@@ -13,7 +14,7 @@ all : configures include/libcharset.h.build.in include/localcharset.h.build.in
 
 autoconf/aclocal.m4 : $(wildcard m4/*.m4)
 	test -d autoconf || mkdir autoconf
-	$(ACLOCAL) -I m4 --output=$@ && rm -rf autom4te.cache
+	$(ACLOCAL) -I m4 --install --output=$@ && rm -rf autom4te.cache
 
 configures : configure config.h.in
 

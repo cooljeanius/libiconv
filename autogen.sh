@@ -78,13 +78,13 @@ fi
 # Copy files into the libcharset subpackage, so that libcharset/autogen.sh
 # does not need to invoke gnulib-tool nor automake.
 for file in INSTALL.generic; do
-  cp -p $file libcharset/$file || exit $?
+  cp -pv $file libcharset/$file || exit $?
 done
 for file in config.guess config.libpath config.sub install-sh libtool-reloc mkinstalldirs; do
-  cp -p build-aux/$file libcharset/build-aux/$file || exit $?
+  cp -pv build-aux/$file libcharset/build-aux/$file || exit $?
 done
 for file in codeset.m4 fcntl-o.m4 lib-ld.m4 relocatable.m4 relocatable-lib.m4 visibility.m4; do
-  cp -p srcm4/$file libcharset/m4/$file || exit $?
+  cp -pv srcm4/$file libcharset/m4/$file || exit $?
 done
 
 # ========== Generate files. ==========
