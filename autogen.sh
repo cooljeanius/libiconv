@@ -64,7 +64,8 @@ if test $skip_gnulib = false; then
   GNULIB_TOOL="$GNULIB_SRCDIR/gnulib-tool"
   test -f "$GNULIB_TOOL" || {
     if test -d "$GNULIB_SRCDIR"; then
-      echo "*** gnulib-tool not found in $GNULIB_SRCDIR." 1>&2
+      echo "*** gnulib-tool not found in $GNULIB_SRCDIR; maybe the submodule needs to be updated?"
+      ./gitsub.sh pull || exit $?
     else
       echo "*** gnulib-tool not found." 1>&2
     fi
