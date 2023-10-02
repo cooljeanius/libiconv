@@ -56,14 +56,18 @@ if test $skip_gnulib = false; then
   else
     GNULIB_SRCDIR=`pwd`/gnulib
     test -d "$GNULIB_SRCDIR" || {
-      echo "*** Subdirectory 'gnulib' does not yet exist. Use './gitsub.sh pull' to create it, or set the environment variable GNULIB_SRCDIR." 1>&2
-      exit 1
+      echo "*** Subdirectory 'gnulib' does not yet exist. Attempting to use './gitsub.sh pull' to create it."
+      ./gitsub.sh pull || exit $?
     }
   fi
   # Now it should contain a gnulib-tool.
   GNULIB_TOOL="$GNULIB_SRCDIR/gnulib-tool"
   test -f "$GNULIB_TOOL" || {
-    echo "*** gnulib-tool not found." 1>&2
+    if test -d "$GNULIB_SRCDIR"; then
+      echo "*** gnulib-tool not found in $GNULIB_SRCDIR." 1>&2
+    else
+      echo "*** gnulib-tool not found." 1>&2
+    fi
     exit 1
   }
   for file in build-aux/compile build-aux/ar-lib; do
